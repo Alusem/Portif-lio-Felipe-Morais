@@ -17,9 +17,15 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  /** Vídeo de preview do projeto (loop mudo no card) */
   videoUrl: string;
-  image?: string;
+  posterUrl: string;
+}
+
+export interface AboutInfo {
+  label: string;
+  name: string;
+  paragraphs: string[];
+  profileImage: string;
 }
 
 export interface SiteData {
@@ -34,6 +40,8 @@ export interface SiteData {
   ctaFooterEmphasis: string;
   navLinks: NavLink[];
   contact: ContactInfo;
+  about: AboutInfo;
   projects: Project[];
   heroVideoUrl: string;
+  heroPosterUrl: string;
 }

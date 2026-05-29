@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { siteData } from "@/data/site";
 
@@ -32,10 +33,19 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
         <Link
           href="/"
-          className="font-display text-xl tracking-wide text-cream md:text-2xl"
+          className="flex items-center gap-3"
           onClick={() => setMenuOpen(false)}
         >
-          {siteData.name}
+          <Image
+            src="/images/brand-logo.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-8 w-8 object-contain md:h-9 md:w-9"
+          />
+          <span className="font-display text-xl tracking-wide text-cream md:text-2xl">
+            {siteData.name}
+          </span>
         </Link>
 
         <ul className="hidden items-center gap-10 md:flex">

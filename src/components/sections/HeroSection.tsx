@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { siteData } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { BrandLogoButton } from "@/components/ui/BrandLogoButton";
+import { BackgroundVideo } from "@/components/ui/BackgroundVideo";
 import {
   staggerContainerVariants,
   staggerItemVariants,
@@ -20,22 +21,16 @@ export function HeroSection() {
     ctaPrimary,
     contact,
     heroVideoUrl,
+    heroPosterUrl,
   } = siteData;
 
   return (
     <section className="relative flex min-h-screen items-end overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/images/placeholders/hero.svg"
+      <BackgroundVideo
+        src={heroVideoUrl}
+        poster={heroPosterUrl}
         className="absolute inset-0 h-full w-full object-cover"
-        aria-hidden="true"
-      >
-        <source src={heroVideoUrl} type="video/mp4" />
-      </video>
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/40" />
 
       <motion.div
@@ -86,11 +81,11 @@ export function HeroSection() {
       </motion.div>
 
       <motion.a
-        href="#trabalhos"
+        href="#sobre"
         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-xs uppercase tracking-[0.25em] text-cream/50"
         animate={reducedMotion ? undefined : { y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        aria-label="Rolar para trabalhos"
+        aria-label="Rolar para sobre"
       >
         Scroll Down
         <span className="block h-8 w-px bg-cream/30" />

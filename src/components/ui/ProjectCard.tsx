@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import type { Project } from "@/types";
+import { ProjectVideo } from "@/components/ui/ProjectVideo";
 import { cardHoverTransition } from "@/lib/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -13,21 +13,6 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const reducedMotion = useReducedMotion();
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handlePlay = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.currentTime = 0;
-    void video.play();
-  };
-
-  const handlePause = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.pause();
-    video.currentTime = 0;
-  };
 
   return (
     <motion.article
@@ -36,23 +21,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ ...cardHoverTransition, delay: index * 0.08 }}
-      onMouseEnter={handlePlay}
-      onMouseLeave={handlePause}
     >
       <motion.div
         className="absolute inset-0"
         whileHover={reducedMotion ? undefined : { scale: 1.03 }}
         transition={cardHoverTransition}
       >
-        <video
-          ref={videoRef}
+        <ProjectVideo
           src={project.videoUrl}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="h-full w-full object-cover"
-          aria-label={project.title}
+          poster={project.posterUrl}
+          title={project.title}
         />
       </motion.div>
 
