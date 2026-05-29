@@ -1,9 +1,10 @@
 import { siteData } from "@/data/site";
 import { Button } from "@/components/ui/Button";
+import { BrandLogoButton } from "@/components/ui/BrandLogoButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function Footer() {
-  const { contact, name } = siteData;
+  const { contact, name, ctaFooter, ctaFooterEmphasis } = siteData;
 
   return (
     <footer id="contato" className="border-t border-cream/10 bg-surface/30">
@@ -13,11 +14,12 @@ export function Footer() {
             Contato
           </p>
           <h2 className="font-display text-4xl leading-tight text-cream md:text-6xl lg:text-7xl">
-            Vamos contar a história de{" "}
-            <span className="italic text-accent">vocês</span>
+            {ctaFooter}{" "}
+            <span className="italic text-accent">{ctaFooterEmphasis}</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-cream/70 md:text-lg">
-            Entre em contato para conversarmos sobre seu próximo documentário.
+            Entre em contato para conversarmos sobre seu próximo projeto
+            audiovisual.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
@@ -27,14 +29,14 @@ export function Footer() {
             <Button href={contact.whatsappUrl} variant="secondary" external>
               WhatsApp
             </Button>
-            <Button href={contact.instagram.url} variant="secondary" external>
-              Instagram {contact.instagram.handle}
-            </Button>
+            <BrandLogoButton href={contact.instagram.url} />
           </div>
 
           <div className="mt-16 flex flex-col items-center gap-2 border-t border-cream/10 pt-8 text-sm text-cream/50">
             <p>{contact.phone}</p>
-            <p>© {new Date().getFullYear()} {name}. Todos os direitos reservados.</p>
+            <p>
+              © {new Date().getFullYear()} {name}. Todos os direitos reservados.
+            </p>
           </div>
         </ScrollReveal>
       </div>

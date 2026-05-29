@@ -17,29 +17,23 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
-  videoUrl?: string;
-}
-
-export interface ServicePackage {
-  id: string;
-  number: string;
-  name: string;
-  subtitle: string;
-  priceRange: string;
-  features: string[];
-  highlighted?: boolean;
+  /** Vídeo de preview do projeto (loop mudo no card) */
+  videoUrl: string;
+  image?: string;
 }
 
 export interface SiteData {
   name: string;
   role: string;
-  tagline: string;
   headline: string;
   headlineEmphasis: string;
-  manifesto: string;
+  tagline: string;
+  services: string;
+  ctaPrimary: string;
+  ctaFooter: string;
+  ctaFooterEmphasis: string;
   navLinks: NavLink[];
   contact: ContactInfo;
   projects: Project[];
-  packages: ServicePackage[];
+  heroVideoUrl: string;
 }

@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { siteData } from "@/data/site";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: `${siteData.name} | Documentarista`,
-  description: siteData.tagline,
+  title: `${siteData.name} | Produtor Audiovisual`,
+  description: `${siteData.tagline} ${siteData.services}`,
   openGraph: {
-    title: `${siteData.name} | Documentarista`,
+    title: `${siteData.name} | Produtor Audiovisual`,
     description: siteData.tagline,
     locale: "pt_BR",
     type: "website",
@@ -34,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${cormorant.variable} ${inter.variable} h-full scroll-smooth`}>
+    <html lang="pt-BR" className={`${poppins.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col font-sans antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>

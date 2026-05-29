@@ -1,34 +1,42 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { siteData } from "@/data/site";
 import { Button } from "@/components/ui/Button";
+import { BrandLogoButton } from "@/components/ui/BrandLogoButton";
 import {
   staggerContainerVariants,
   staggerItemVariants,
 } from "@/lib/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
-/**
- * Hero principal com stagger de entrada nos elementos de texto.
- * Background full-bleed com overlay escuro para legibilidade cinematográfica.
- */
 export function HeroSection() {
   const reducedMotion = useReducedMotion();
-  const { headline, headlineEmphasis, tagline, manifesto, contact } = siteData;
+  const {
+    headline,
+    headlineEmphasis,
+    tagline,
+    services,
+    ctaPrimary,
+    contact,
+    heroVideoUrl,
+  } = siteData;
 
   return (
     <section className="relative flex min-h-screen items-end overflow-hidden">
-      <Image
-        src="/images/placeholders/hero.svg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/images/placeholders/hero.svg"
+        className="absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      >
+        <source src={heroVideoUrl} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/40" />
 
       <motion.div
         className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-28 pt-32 md:px-8 md:pb-36 md:pt-40"
@@ -45,7 +53,7 @@ export function HeroSection() {
 
         <motion.h1
           variants={staggerItemVariants}
-          className="font-display text-[clamp(2.75rem,8vw,6.5rem)] leading-[1.05] text-cream"
+          className="font-display text-[clamp(2.25rem,7vw,5.5rem)] leading-[1.08] text-cream"
         >
           {headline}
           <br />
@@ -54,28 +62,26 @@ export function HeroSection() {
 
         <motion.p
           variants={staggerItemVariants}
-          className="mt-6 max-w-2xl text-lg text-cream/80 md:text-xl"
+          className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/85 md:text-xl"
         >
           {tagline}
         </motion.p>
 
         <motion.p
           variants={staggerItemVariants}
-          className="mt-8 max-w-3xl text-base leading-relaxed text-cream/60 md:text-lg"
+          className="mt-5 max-w-3xl text-base leading-relaxed text-cream/60 md:text-lg"
         >
-          {manifesto}
+          {services}
         </motion.p>
 
         <motion.div
           variants={staggerItemVariants}
-          className="mt-10 flex flex-col gap-4 sm:flex-row"
+          className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
         >
           <Button href="#contato" variant="primary">
-            Vamos contar sua história
+            {ctaPrimary}
           </Button>
-          <Button href={contact.instagram.url} variant="secondary" external>
-            Instagram
-          </Button>
+          <BrandLogoButton href={contact.instagram.url} />
         </motion.div>
       </motion.div>
 
