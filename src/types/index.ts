@@ -19,6 +19,8 @@ export interface Project {
   description: string;
   videoUrl: string;
   posterUrl: string;
+  /** Link do YouTube — preencher quando o documentário estiver publicado */
+  youtubeUrl?: string;
 }
 
 export interface AboutInfo {

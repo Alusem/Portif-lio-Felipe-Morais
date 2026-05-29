@@ -33,19 +33,17 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="inline-flex items-center"
           onClick={() => setMenuOpen(false)}
+          aria-label={siteData.name}
         >
           <Image
             src="/images/brand-logo.png"
             alt=""
-            width={36}
-            height={36}
-            className="h-8 w-8 object-contain md:h-9 md:w-9"
+            width={40}
+            height={40}
+            className="h-9 w-9 object-contain md:h-10 md:w-10"
           />
-          <span className="font-display text-xl tracking-wide text-cream md:text-2xl">
-            {siteData.name}
-          </span>
         </Link>
 
         <ul className="hidden items-center gap-10 md:flex">
