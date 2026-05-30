@@ -11,12 +11,19 @@ interface ProjectCardProps {
   index: number;
 }
 
+function getWatchLabel(url: string): string {
+  if (url.includes("instagram.com")) return "Ver no Instagram";
+  if (url.includes("youtu")) return "Assistir no YouTube";
+  return "Assistir";
+}
+
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const reducedMotion = useReducedMotion();
-  const hasYoutube = Boolean(project.youtubeUrl);
+  const watchUrl = project.watchUrl?.trim();
+  const hasLink = Boolean(watchUrl);
 
   const className = `group relative block aspect-[4/5] overflow-hidden rounded-sm bg-surface ${
-    hasYoutube ? "cursor-pointer" : "cursor-default"
+    hasLink ? "cursor-pointer" : "cursor-default"
   }`;
 
   const animationProps = {
@@ -52,9 +59,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <p className="mt-3 max-h-0 overflow-hidden text-sm leading-relaxed text-cream/70 opacity-0 transition-all duration-500 group-hover:max-h-32 group-hover:opacity-100">
           {project.description}
         </p>
-        <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          {hasYoutube ? "Assistir no YouTube" : "Em breve no YouTube"}
-          {hasYoutube && (
+        {hasLink && (
+          <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            {getWatchLabel(watchUrl!)}
             <svg
               width="16"
               height="16"
@@ -70,19 +77,19 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 strokeLinejoin="round"
               />
             </svg>
-          )}
-        </span>
+          </span>
+        )}
       </div>
     </>
   );
 
-  if (hasYoutube) {
+  if (hasLink) {
     return (
       <motion.a
-        href={project.youtubeUrl}
+        href={watchUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Assistir ${project.title} no YouTube`}
+        aria-label={`${getWatchLabel(watchUrl!)}: ${project.title}`}
         className={className}
         {...animationProps}
       >

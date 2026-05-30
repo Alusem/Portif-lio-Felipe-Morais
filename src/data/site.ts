@@ -46,7 +46,7 @@ export const siteData: SiteData = {
         "Registro de uma jornada de formação e envio, mostrando o impacto do evangelismo na vida de jovens e comunidades.",
       videoUrl: "/videos/escola-missoes.mp4",
       posterUrl: "/images/posters/escola-missoes.jpg",
-      youtubeUrl: "",
+      watchUrl: "https://youtu.be/Y5rALlV7kTA",
     },
     {
       id: "batismo-pib-2025",
@@ -55,7 +55,7 @@ export const siteData: SiteData = {
         "Um retrato de fé e transformação, capturando o significado do batismo na vida de novos convertidos.",
       videoUrl: "/videos/batismo-pib.mp4",
       posterUrl: "/images/posters/batismo-pib.jpg",
-      youtubeUrl: "",
+      watchUrl: "https://youtu.be/BXxv_6Ez9Pg",
     },
     {
       id: "missao-russas",
@@ -64,7 +64,7 @@ export const siteData: SiteData = {
         "Sobre ação missionária, evidenciando o impacto do evangelho através de histórias reais e vivências no campo.",
       videoUrl: "/videos/missao-russas.mp4",
       posterUrl: "/images/posters/missao-russas.jpg",
-      youtubeUrl: "",
+      watchUrl: "https://www.instagram.com/reel/DMqAgUcsNhZ/",
     },
     {
       id: "alcantara",
@@ -73,7 +73,7 @@ export const siteData: SiteData = {
         "Registro cinematográfico de histórias de fé e transformação em comunidades locais.",
       videoUrl: "/videos/alcantara.mp4",
       posterUrl: "/images/posters/alcantara.jpg",
-      youtubeUrl: "",
+      watchUrl: "https://youtu.be/pknfMNtdl4c",
     },
     {
       id: "pib-divineia-25",
@@ -82,7 +82,7 @@ export const siteData: SiteData = {
         "Celebração de uma trajetória marcada por fé, crescimento e impacto na comunidade ao longo de gerações.",
       videoUrl: "/videos/pib-divineia.mp4",
       posterUrl: "/images/posters/pib-divineia.jpg",
-      youtubeUrl: "",
+      watchUrl: "https://youtu.be/IE6EUJ9L0g8",
     },
     {
       id: "vivendo-amor",
@@ -91,7 +91,7 @@ export const siteData: SiteData = {
         "Um registro de ações práticas de amor ao próximo, revelando como pequenas atitudes geram grandes transformações.",
       videoUrl: "/videos/vivendo-amor.mp4",
       posterUrl: "/images/posters/vivendo-amor.jpg",
-      youtubeUrl: "",
+      watchUrl: "https://www.instagram.com/p/DO54JoeDrc-/",
     },
   ],
 };
