@@ -50,7 +50,7 @@ export const siteData: SiteData = {
     },
     {
       id: "batismo-pib-2025",
-      title: "Batismo PIB Dignidade 2025",
+      title: "Graça que Alcança",
       description:
         "Um retrato de fé e transformação, capturando o significado do batismo na vida de novos convertidos.",
       videoUrl: "/videos/batismo-pib.mp4",
@@ -77,7 +77,7 @@ export const siteData: SiteData = {
     },
     {
       id: "pib-divineia-25",
-      title: "25 Anos PIB Divineia",
+      title: "25 Anos de Fé e Esperança",
       description:
         "Celebração de uma trajetória marcada por fé, crescimento e impacto na comunidade ao longo de gerações.",
       videoUrl: "/videos/pib-divineia.mp4",

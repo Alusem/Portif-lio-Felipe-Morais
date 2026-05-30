@@ -1,6 +1,6 @@
 import { siteData } from "@/data/site";
 import { Button } from "@/components/ui/Button";
-import { BrandLogoButton } from "@/components/ui/BrandLogoButton";
+import { InstagramButton } from "@/components/ui/InstagramButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function Footer() {
@@ -29,7 +29,7 @@ export function Footer() {
             <Button href={contact.whatsappUrl} variant="secondary" external>
               WhatsApp
             </Button>
-            <BrandLogoButton href={contact.instagram.url} />
+            <InstagramButton href={contact.instagram.url} />
           </div>
 
           <div className="mt-16 flex flex-col items-center gap-2 border-t border-cream/10 pt-8 text-sm text-cream/50">

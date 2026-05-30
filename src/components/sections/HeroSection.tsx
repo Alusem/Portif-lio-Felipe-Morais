@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { siteData } from "@/data/site";
 import { Button } from "@/components/ui/Button";
-import { BrandLogoButton } from "@/components/ui/BrandLogoButton";
+import { InstagramButton } from "@/components/ui/InstagramButton";
 import { BackgroundVideo } from "@/components/ui/BackgroundVideo";
 import {
   staggerContainerVariants,
@@ -76,7 +76,7 @@ export function HeroSection() {
           <Button href="#contato" variant="primary">
             {ctaPrimary}
           </Button>
-          <BrandLogoButton href={contact.instagram.url} />
+          <InstagramButton href={contact.instagram.url} />
         </motion.div>
       </motion.div>
 
