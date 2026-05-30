@@ -23,9 +23,9 @@ export const siteData: SiteData = {
     name: "Felipe Morais",
     profileImage: "/images/felipe-perfil.jpg",
     paragraphs: [
-      "Felipe Morais é um cineasta e designer brasileiro apaixonado por contar histórias que transformam vidas.",
-      "Especializado em documentários e filmes institucionais, dedica seu trabalho a dar voz a pessoas, organizações e projetos que geram impacto real na sociedade. Sua abordagem combina narrativa, estética cinematográfica e sensibilidade humana para criar filmes que conectam, inspiram e permanecem na memória.",
-      "Com experiência em produções sociais e missionárias, acredita que histórias autênticas têm o poder de mobilizar pessoas, fortalecer causas e abrir novas oportunidades para quem faz a diferença no mundo.",
+      "Felipe Morais é um cineasta e designer brasileiro dedicado a transformar histórias reais em experiências cinematográficas memoráveis.",
+      "Seu trabalho une técnica, sensibilidade e narrativa para produzir documentários, filmes institucionais e projetos audiovisuais que conectam pessoas a causas, marcas e propósitos.",
+      "Com experiência em produções sociais, missionárias, institucionais e casamentos, acredita que as histórias mais poderosas são aquelas que refletem a verdade, despertam emoções e inspiram transformação.",
     ],
   },
   contact: {
