@@ -4,7 +4,7 @@ import { InstagramButton } from "@/components/ui/InstagramButton";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function Footer() {
-  const { contact, name, ctaFooter, ctaFooterEmphasis } = siteData;
+  const { contact, name, ctaFooter } = siteData;
 
   return (
     <footer id="contato" className="border-t border-cream/10 bg-surface/30">
@@ -13,9 +13,8 @@ export function Footer() {
           <p className="mb-4 text-xs uppercase tracking-[0.25em] text-accent">
             Contato
           </p>
-          <h2 className="font-display text-4xl leading-tight text-cream md:text-6xl lg:text-7xl">
-            {ctaFooter}{" "}
-            <span className="italic text-accent">{ctaFooterEmphasis}</span>
+          <h2 className="font-display text-4xl leading-tight text-accent md:text-6xl lg:text-7xl">
+            {ctaFooter}
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-cream/70 md:text-lg">
             Entre em contato para conversarmos sobre seu próximo projeto

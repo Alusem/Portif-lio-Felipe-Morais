@@ -39,7 +39,6 @@ export interface SiteData {
   services: string;
   ctaPrimary: string;
   ctaFooter: string;
-  ctaFooterEmphasis: string;
   navLinks: NavLink[];
   contact: ContactInfo;
   about: AboutInfo;

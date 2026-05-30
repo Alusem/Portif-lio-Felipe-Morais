@@ -10,8 +10,7 @@ export const siteData: SiteData = {
   services:
     "Produção de documentários, curtas-metragens, vídeos institucionais, publicidade e filmes de casamento.",
   ctaPrimary: "Vamos contar a sua história",
-  ctaFooter: "Vamos contar a",
-  ctaFooterEmphasis: "sua história",
+  ctaFooter: "Vamos contar sua história?",
   heroVideoUrl: "/videos/hero.mp4",
   heroPosterUrl: "/images/posters/hero.jpg",
   navLinks: [
